@@ -178,7 +178,7 @@ class StringTracker {
 
     func getStableString() -> String? {
         // Require the recognizer to see the same string at least 10 times.
-        if bestCount >= 2 {
+        if bestCount >= 5 {
             return bestString
         } else {
             return nil

@@ -230,6 +230,10 @@ class TextRecongnizerViewController: UIViewController {
             return
         }
 
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         captureSession.startRunning()
     }
 
@@ -245,6 +249,13 @@ class TextRecongnizerViewController: UIViewController {
     func stopRunning() {
         captureSessionQueue.sync {
             self.captureSession.stopRunning()
+        }
+    }
+
+    func navigateToActionViewController(phoneNumber: String) {
+        DispatchQueue.main.async {
+            let viewController = ActionsViewController(nibName: nil, bundle: nil, phoneNumber: phoneNumber)
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
 

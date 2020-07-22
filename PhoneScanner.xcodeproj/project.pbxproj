@@ -7,10 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F942603624C38A9600710CF8 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F942603524C38A9600710CF8 /* TesseractOCR.framework */; };
+		F942603924C38ABC00710CF8 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F942603824C38AAA00710CF8 /* libc++.tbd */; };
+		F942603B24C38ACE00710CF8 /* libc++abi.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F942603A24C38AC600710CF8 /* libc++abi.tbd */; };
+		F942603D24C38B0F00710CF8 /* TextRecongnizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F942603C24C38B0F00710CF8 /* TextRecongnizerViewController.swift */; };
+		F942604124C38B4900710CF8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F942604024C38B4900710CF8 /* PreviewView.swift */; };
+		F942604224C38B4900710CF8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F942604024C38B4900710CF8 /* PreviewView.swift */; };
+		F942604624C38BA900710CF8 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F942604424C38BA900710CF8 /* ScannerViewController.swift */; };
+		F942604724C38BA900710CF8 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F942604424C38BA900710CF8 /* ScannerViewController.swift */; };
+		F942604824C38BA900710CF8 /* ScannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F942604524C38BA900710CF8 /* ScannerViewController.xib */; };
+		F942604924C38BA900710CF8 /* ScannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F942604524C38BA900710CF8 /* ScannerViewController.xib */; };
+		F942604B24C38CEC00710CF8 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = F942604A24C38CEC00710CF8 /* tessdata */; };
+		F942604C24C38CEC00710CF8 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = F942604A24C38CEC00710CF8 /* tessdata */; };
+		F942605524C38D6400710CF8 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F942605424C38D6400710CF8 /* UIExtensions.swift */; };
+		F942605624C38D6400710CF8 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F942605424C38D6400710CF8 /* UIExtensions.swift */; };
+		F942605824C391AB00710CF8 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F942605724C391AB00710CF8 /* StringUtils.swift */; };
+		F942605924C391AB00710CF8 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F942605724C391AB00710CF8 /* StringUtils.swift */; };
+		F9B4BD0A24C8B63D00A8B0A9 /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B4BD0824C8B63D00A8B0A9 /* ActionsViewController.swift */; };
+		F9B4BD0B24C8B63D00A8B0A9 /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B4BD0824C8B63D00A8B0A9 /* ActionsViewController.swift */; };
+		F9B4BD0C24C8B63D00A8B0A9 /* ActionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B4BD0924C8B63D00A8B0A9 /* ActionsViewController.xib */; };
+		F9B4BD0D24C8B63D00A8B0A9 /* ActionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B4BD0924C8B63D00A8B0A9 /* ActionsViewController.xib */; };
 		F9D8799B24C0EFC10004CCA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8799A24C0EFC10004CCA8 /* AppDelegate.swift */; };
 		F9D8799D24C0EFC10004CCA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8799C24C0EFC10004CCA8 /* SceneDelegate.swift */; };
-		F9D8799F24C0EFC10004CCA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8799E24C0EFC10004CCA8 /* ViewController.swift */; };
-		F9D879A224C0EFC10004CCA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D879A024C0EFC10004CCA8 /* Main.storyboard */; };
 		F9D879A524C0EFC10004CCA8 /* PhoneScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9D879A324C0EFC10004CCA8 /* PhoneScanner.xcdatamodeld */; };
 		F9D879A724C0EFC40004CCA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D879A624C0EFC40004CCA8 /* Assets.xcassets */; };
 		F9D879AA24C0EFC40004CCA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D879A824C0EFC40004CCA8 /* LaunchScreen.storyboard */; };
@@ -28,11 +46,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F942603524C38A9600710CF8 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
+		F942603824C38AAA00710CF8 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		F942603A24C38AC600710CF8 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
+		F942603C24C38B0F00710CF8 /* TextRecongnizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecongnizerViewController.swift; sourceTree = "<group>"; };
+		F942604024C38B4900710CF8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		F942604424C38BA900710CF8 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		F942604524C38BA900710CF8 /* ScannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannerViewController.xib; sourceTree = "<group>"; };
+		F942604A24C38CEC00710CF8 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		F942604D24C38D0500710CF8 /* PhoneScanner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhoneScanner-Bridging-Header.h"; sourceTree = "<group>"; };
+		F942605424C38D6400710CF8 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		F942605724C391AB00710CF8 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		F9B4BD0824C8B63D00A8B0A9 /* ActionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
+		F9B4BD0924C8B63D00A8B0A9 /* ActionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionsViewController.xib; sourceTree = "<group>"; };
 		F9D8799724C0EFC10004CCA8 /* PhoneScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D8799A24C0EFC10004CCA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D8799C24C0EFC10004CCA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F9D8799E24C0EFC10004CCA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F9D879A124C0EFC10004CCA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9D879A424C0EFC10004CCA8 /* PhoneScanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PhoneScanner.xcdatamodel; sourceTree = "<group>"; };
 		F9D879A624C0EFC40004CCA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9D879A924C0EFC40004CCA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F942603B24C38ACE00710CF8 /* libc++abi.tbd in Frameworks */,
+				F942603924C38ABC00710CF8 /* libc++.tbd in Frameworks */,
+				F942603624C38A9600710CF8 /* TesseractOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +92,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F942603724C38AAA00710CF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F942603A24C38AC600710CF8 /* libc++abi.tbd */,
+				F942603824C38AAA00710CF8 /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F942603E24C38B1300710CF8 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				F942604324C38B8A00710CF8 /* UIViewControllers */,
+				F942603F24C38B3200710CF8 /* UIViews */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		F942603F24C38B3200710CF8 /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				F942604024C38B4900710CF8 /* PreviewView.swift */,
+			);
+			path = UIViews;
+			sourceTree = "<group>";
+		};
+		F942604324C38B8A00710CF8 /* UIViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F942603C24C38B0F00710CF8 /* TextRecongnizerViewController.swift */,
+				F942604424C38BA900710CF8 /* ScannerViewController.swift */,
+				F942604524C38BA900710CF8 /* ScannerViewController.xib */,
+			);
+			path = UIViewControllers;
+			sourceTree = "<group>";
+		};
+		F942605324C38D5500710CF8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F942605424C38D6400710CF8 /* UIExtensions.swift */,
+				F942605724C391AB00710CF8 /* StringUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F9B4BD0724C8B62600A8B0A9 /* ActionView */ = {
+			isa = PBXGroup;
+			children = (
+				F9B4BD0824C8B63D00A8B0A9 /* ActionsViewController.swift */,
+				F9B4BD0924C8B63D00A8B0A9 /* ActionsViewController.xib */,
+			);
+			path = ActionView;
+			sourceTree = "<group>";
+		};
 		F9D8798E24C0EFC10004CCA8 = {
 			isa = PBXGroup;
 			children = (
+				F942603524C38A9600710CF8 /* TesseractOCR.framework */,
 				F9D8799924C0EFC10004CCA8 /* PhoneScanner */,
 				F9D879B324C0EFC40004CCA8 /* PhoneScannerTests */,
 				F9D8799824C0EFC10004CCA8 /* Products */,
+				F942603724C38AAA00710CF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,14 +169,17 @@
 		F9D8799924C0EFC10004CCA8 /* PhoneScanner */ = {
 			isa = PBXGroup;
 			children = (
+				F9B4BD0724C8B62600A8B0A9 /* ActionView */,
+				F942604A24C38CEC00710CF8 /* tessdata */,
+				F942603E24C38B1300710CF8 /* Scanner */,
+				F942605324C38D5500710CF8 /* Utils */,
 				F9D8799A24C0EFC10004CCA8 /* AppDelegate.swift */,
 				F9D8799C24C0EFC10004CCA8 /* SceneDelegate.swift */,
-				F9D8799E24C0EFC10004CCA8 /* ViewController.swift */,
-				F9D879A024C0EFC10004CCA8 /* Main.storyboard */,
 				F9D879A624C0EFC40004CCA8 /* Assets.xcassets */,
 				F9D879A824C0EFC40004CCA8 /* LaunchScreen.storyboard */,
 				F9D879AB24C0EFC40004CCA8 /* Info.plist */,
 				F9D879A324C0EFC10004CCA8 /* PhoneScanner.xcdatamodeld */,
+				F942604D24C38D0500710CF8 /* PhoneScanner-Bridging-Header.h */,
 			);
 			path = PhoneScanner;
 			sourceTree = "<group>";
@@ -152,9 +243,11 @@
 				TargetAttributes = {
 					F9D8799624C0EFC10004CCA8 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					F9D879AF24C0EFC40004CCA8 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 						TestTargetID = F9D8799624C0EFC10004CCA8;
 					};
 				};
@@ -183,9 +276,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F942604824C38BA900710CF8 /* ScannerViewController.xib in Resources */,
+				F942604B24C38CEC00710CF8 /* tessdata in Resources */,
+				F9B4BD0C24C8B63D00A8B0A9 /* ActionsViewController.xib in Resources */,
 				F9D879AA24C0EFC40004CCA8 /* LaunchScreen.storyboard in Resources */,
 				F9D879A724C0EFC40004CCA8 /* Assets.xcassets in Resources */,
-				F9D879A224C0EFC10004CCA8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +288,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F942604924C38BA900710CF8 /* ScannerViewController.xib in Resources */,
+				F9B4BD0D24C8B63D00A8B0A9 /* ActionsViewController.xib in Resources */,
+				F942604C24C38CEC00710CF8 /* tessdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,8 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9D8799F24C0EFC10004CCA8 /* ViewController.swift in Sources */,
+				F942604124C38B4900710CF8 /* PreviewView.swift in Sources */,
+				F942605524C38D6400710CF8 /* UIExtensions.swift in Sources */,
+				F942604624C38BA900710CF8 /* ScannerViewController.swift in Sources */,
+				F942603D24C38B0F00710CF8 /* TextRecongnizerViewController.swift in Sources */,
+				F942605824C391AB00710CF8 /* StringUtils.swift in Sources */,
 				F9D879A524C0EFC10004CCA8 /* PhoneScanner.xcdatamodeld in Sources */,
+				F9B4BD0A24C8B63D00A8B0A9 /* ActionsViewController.swift in Sources */,
 				F9D8799B24C0EFC10004CCA8 /* AppDelegate.swift in Sources */,
 				F9D8799D24C0EFC10004CCA8 /* SceneDelegate.swift in Sources */,
 			);
@@ -214,7 +317,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B4BD0B24C8B63D00A8B0A9 /* ActionsViewController.swift in Sources */,
 				F9D879B524C0EFC40004CCA8 /* PhoneScannerTests.swift in Sources */,
+				F942605924C391AB00710CF8 /* StringUtils.swift in Sources */,
+				F942604724C38BA900710CF8 /* ScannerViewController.swift in Sources */,
+				F942604224C38B4900710CF8 /* PreviewView.swift in Sources */,
+				F942605624C38D6400710CF8 /* UIExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,14 +337,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F9D879A024C0EFC10004CCA8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F9D879A124C0EFC10004CCA8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F9D879A824C0EFC40004CCA8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -298,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -352,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -366,8 +466,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CUR67WKD28;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PhoneScanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -375,6 +481,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PhoneScanner.PhoneScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PhoneScanner/PhoneScanner-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -384,8 +492,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CUR67WKD28;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PhoneScanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -393,6 +507,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PhoneScanner.PhoneScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PhoneScanner/PhoneScanner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -403,6 +518,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CUR67WKD28;
 				INFOPLIST_FILE = PhoneScannerTests/Info.plist;
@@ -414,6 +530,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PhoneScanner.PhoneScannerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PhoneScanner/PhoneScannerTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhoneScanner.app/PhoneScanner";
@@ -425,6 +543,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CUR67WKD28;
 				INFOPLIST_FILE = PhoneScannerTests/Info.plist;
@@ -436,6 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PhoneScanner.PhoneScannerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PhoneScanner/PhoneScannerTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhoneScanner.app/PhoneScanner";

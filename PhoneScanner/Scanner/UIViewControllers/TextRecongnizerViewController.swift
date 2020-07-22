@@ -14,7 +14,6 @@ class TextRecongnizerViewController: UIViewController {
 
     @IBOutlet weak var cutoutView: UIView!
     @IBOutlet weak var preview: PreviewView!
-    @IBOutlet weak var resultText: UILabel!
 
     var maskLayer = CAShapeLayer()
     // Device orientation. Updated whenever the orientation changes to a
@@ -235,15 +234,6 @@ class TextRecongnizerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         captureSession.startRunning()
-    }
-
-    // MARK: - UI drawing and interaction
-
-    func showString(string: String) {
-        DispatchQueue.main.async {
-            self.resultText.text = string
-        }
-//    self.stopRunning()
     }
 
     func stopRunning() {

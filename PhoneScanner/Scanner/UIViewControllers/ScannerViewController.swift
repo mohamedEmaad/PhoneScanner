@@ -180,7 +180,6 @@ extension ScannerViewController {
             print("here is the loging \(count)")
             numberTracker.logFrame(strings: numbers)
             if let sureNumber = numberTracker.getStableString() {
-                showString(string: sureNumber)
                 numberTracker.reset(string: sureNumber)
                 stopRunning()
                 navigateToActionViewController(phoneNumber: sureNumber)

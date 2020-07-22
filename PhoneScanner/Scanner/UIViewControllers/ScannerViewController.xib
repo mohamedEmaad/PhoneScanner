@@ -11,7 +11,6 @@
             <connections>
                 <outlet property="cutoutView" destination="XKV-9e-7dL" id="MBw-Rq-Q2h"/>
                 <outlet property="preview" destination="dYI-hJ-0Xj" id="Gpq-FW-XcP"/>
-                <outlet property="resultText" destination="xyA-4j-2Xv" id="UvV-1C-jCw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,12 +27,6 @@
                     <rect key="frame" x="0.0" y="10" width="414" height="886"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyA-4j-2Xv">
-                    <rect key="frame" x="186" y="791" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -45,8 +38,6 @@
                 <constraint firstItem="XKV-9e-7dL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="5" id="lgb-C9-Szb"/>
                 <constraint firstAttribute="trailing" secondItem="XKV-9e-7dL" secondAttribute="trailing" id="r5s-Jv-EEe"/>
                 <constraint firstAttribute="bottom" secondItem="dYI-hJ-0Xj" secondAttribute="bottom" id="s0J-Wv-fZh"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xyA-4j-2Xv" secondAttribute="bottom" constant="50" id="wMM-NB-gOQ"/>
-                <constraint firstItem="xyA-4j-2Xv" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="wzr-ha-SOI"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="153"/>

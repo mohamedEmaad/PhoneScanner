@@ -228,14 +228,16 @@ class TextRecongnizerViewController: UIViewController {
             print("Could not set zoom level due to error: \(error)")
             return
         }
-
+        captureSession.startRunning()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        captureSession.startRunning()
+        if !captureSession.isRunning {
+            captureSession.startRunning()
+        }
     }
-
+    
     func stopRunning() {
         captureSessionQueue.sync {
             self.captureSession.stopRunning()

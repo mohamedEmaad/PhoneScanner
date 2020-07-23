@@ -9,8 +9,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScannerViewController" customModule="PhoneScanner" customModuleProvider="target">
             <connections>
+                <outlet property="actionsStackView" destination="EMz-ZI-cjr" id="9yV-7Y-dzh"/>
                 <outlet property="cutoutView" destination="XKV-9e-7dL" id="MBw-Rq-Q2h"/>
                 <outlet property="preview" destination="dYI-hJ-0Xj" id="Gpq-FW-XcP"/>
+                <outlet property="resultEditText" destination="Bla-Eh-kg8" id="uDJ-by-c8b"/>
+                <outlet property="resultView" destination="LGn-Je-o0J" id="qFW-wE-PN0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,14 +30,75 @@
                     <rect key="frame" x="0.0" y="10" width="414" height="886"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGn-Je-o0J">
+                    <rect key="frame" x="20" y="431" width="374" height="44"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123123123" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bla-Eh-kg8">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="omM-gF-Hdz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="Bla-Eh-kg8" firstAttribute="top" secondItem="LGn-Je-o0J" secondAttribute="top" id="3hw-ph-ojc"/>
+                        <constraint firstAttribute="bottom" secondItem="Bla-Eh-kg8" secondAttribute="bottom" id="J4Z-I3-VZ2"/>
+                        <constraint firstItem="Bla-Eh-kg8" firstAttribute="leading" secondItem="LGn-Je-o0J" secondAttribute="leading" id="Uro-bB-NgT"/>
+                        <constraint firstAttribute="trailing" secondItem="Bla-Eh-kg8" secondAttribute="trailing" id="vhN-vU-cSW"/>
+                    </constraints>
+                </view>
+                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EMz-ZI-cjr">
+                    <rect key="frame" x="20" y="505" width="374" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HU-VG-ehk">
+                            <rect key="frame" x="0.0" y="0.0" width="124.5" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="gdv-Qq-T9B"/>
+                            </constraints>
+                            <state key="normal" title="Call" image="phone.circle.fill" catalog="system">
+                                <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="callAction:" destination="-1" eventType="touchUpInside" id="Vea-Bq-xxX"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVa-sM-D78">
+                            <rect key="frame" x="124.5" y="9" width="125" height="22"/>
+                            <state key="normal" title="Edit" image="square.and.pencil" catalog="system">
+                                <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="editAction:" destination="-1" eventType="touchUpInside" id="SCr-gp-sT0"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUj-lc-1xg">
+                            <rect key="frame" x="249.5" y="9" width="124.5" height="22"/>
+                            <state key="normal" title="Share" image="square.and.arrow.up" catalog="system">
+                                <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="vEP-OB-6hl"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="dYI-hJ-0Xj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3MN-v9-hen"/>
+                <constraint firstItem="EMz-ZI-cjr" firstAttribute="leading" secondItem="LGn-Je-o0J" secondAttribute="leading" id="6MR-Lv-vx7"/>
                 <constraint firstAttribute="bottom" secondItem="XKV-9e-7dL" secondAttribute="bottom" id="BG3-4T-ZNQ"/>
+                <constraint firstItem="LGn-Je-o0J" firstAttribute="trailing" secondItem="XKV-9e-7dL" secondAttribute="trailing" constant="-20" id="C2c-yY-DVe"/>
                 <constraint firstItem="XKV-9e-7dL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="H9x-FF-9Bn"/>
+                <constraint firstItem="EMz-ZI-cjr" firstAttribute="trailing" secondItem="LGn-Je-o0J" secondAttribute="trailing" id="Jzl-w0-la5"/>
                 <constraint firstAttribute="trailing" secondItem="dYI-hJ-0Xj" secondAttribute="trailing" id="QEN-Iu-fsA"/>
+                <constraint firstItem="LGn-Je-o0J" firstAttribute="centerY" secondItem="XKV-9e-7dL" secondAttribute="centerY" id="VLu-0T-mGT"/>
                 <constraint firstItem="dYI-hJ-0Xj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Wd7-Ra-f7H"/>
+                <constraint firstItem="LGn-Je-o0J" firstAttribute="leading" secondItem="XKV-9e-7dL" secondAttribute="leading" constant="20" id="e3L-UP-wvH"/>
+                <constraint firstItem="EMz-ZI-cjr" firstAttribute="top" secondItem="LGn-Je-o0J" secondAttribute="bottom" constant="30" id="i63-BL-PP7"/>
                 <constraint firstItem="XKV-9e-7dL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="5" id="lgb-C9-Szb"/>
                 <constraint firstAttribute="trailing" secondItem="XKV-9e-7dL" secondAttribute="trailing" id="r5s-Jv-EEe"/>
                 <constraint firstAttribute="bottom" secondItem="dYI-hJ-0Xj" secondAttribute="bottom" id="s0J-Wv-fZh"/>
@@ -43,4 +107,9 @@
             <point key="canvasLocation" x="139" y="153"/>
         </view>
     </objects>
+    <resources>
+        <image name="phone.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
+    </resources>
 </document>

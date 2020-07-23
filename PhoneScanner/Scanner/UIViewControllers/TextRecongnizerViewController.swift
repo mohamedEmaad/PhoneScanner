@@ -14,6 +14,9 @@ class TextRecongnizerViewController: UIViewController {
 
     @IBOutlet weak var cutoutView: UIView!
     @IBOutlet weak var preview: PreviewView!
+    @IBOutlet weak var resultView: UIView!
+    @IBOutlet weak var resultEditText: UITextField!
+    @IBOutlet weak var actionsStackView: UIStackView!
 
     var maskLayer = CAShapeLayer()
     // Device orientation. Updated whenever the orientation changes to a
@@ -48,6 +51,8 @@ class TextRecongnizerViewController: UIViewController {
     // Vision -> AVF coordinate transform.
     var visionToAVFTransform = CGAffineTransform.identity
 
+    var phoneNumber: String!
+
     // MARK: - View controller methods
 
     override func viewDidLoad() {
@@ -57,7 +62,7 @@ class TextRecongnizerViewController: UIViewController {
         preview.session = captureSession
 
         // Set up cutout view.
-        cutoutView.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        cutoutView.backgroundColor = UIColor.black.withAlphaComponent(0.85)
         maskLayer.backgroundColor = UIColor.clear.cgColor
         maskLayer.fillRule = .evenOdd
         cutoutView.layer.mask = maskLayer
@@ -244,10 +249,73 @@ class TextRecongnizerViewController: UIViewController {
         }
     }
 
-    func navigateToActionViewController(phoneNumber: String) {
+    func showResultView() {
         DispatchQueue.main.async {
-            let viewController = ActionsViewController(nibName: nil, bundle: nil, phoneNumber: phoneNumber)
-            self.navigationController?.pushViewController(viewController, animated: true)
+            UIView.animate(withDuration: 0.2) {
+                self.resultView.isHidden = false
+                self.actionsStackView.isHidden = false
+                self.resultEditText.text = self.phoneNumber!
+            }
+        }
+    }
+
+    @IBAction func callAction(_ sender: Any) {
+        self.disablePhoneNumberTextField()
+         if let phoneCallURL = URL(string: "telprompt://\(phoneNumber!)") {
+            let application:UIApplication = UIApplication.shared
+            if (application.canOpenURL(phoneCallURL)) {
+                if #available(iOS 10.0, *) {
+                    application.open(phoneCallURL, options: [:], completionHandler: nil)
+                } else {
+                    application.openURL(phoneCallURL as URL)
+                }
+            }
+        }
+    }
+
+    @IBAction func editAction(_ sender: Any) {
+        self.enablePhoneNumberTextField()
+    }
+
+    @IBAction func shareAction(_ sender: UIButton) {
+        self.disablePhoneNumberTextField()
+        let size = self.view.frame.size
+        UIGraphicsBeginImageContext(size)
+        self.view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        UIGraphicsEndImageContext()
+        let objectsToShare = ["", self.phoneNumber!] as [Any]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.excludedActivityTypes = [
+            UIActivity.ActivityType.airDrop,
+            UIActivity.ActivityType.addToReadingList,
+            UIActivity.ActivityType.postToWeibo,
+            UIActivity.ActivityType.print,
+            UIActivity.ActivityType.assignToContact,
+            UIActivity.ActivityType.saveToCameraRoll,
+            UIActivity.ActivityType.addToReadingList,
+            UIActivity.ActivityType.postToFlickr,
+            UIActivity.ActivityType.postToVimeo,
+            UIActivity.ActivityType.postToTencentWeibo
+        ]
+        activityVC.popoverPresentationController?.sourceView = sender
+        self.present(activityVC, animated: true, completion: nil)
+    }
+
+    private func enablePhoneNumberTextField() {
+        UIView.animate(withDuration: 0.2) {
+            self.resultEditText.isEnabled = true
+            self.resultEditText.becomeFirstResponder()
+            self.resultEditText.borderStyle = .roundedRect
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    @objc private func disablePhoneNumberTextField() {
+        UIView.animate(withDuration: 0.2) {
+            self.resultEditText.resignFirstResponder()
+            self.resultEditText.borderStyle = .none
+            self.resultEditText.isEnabled = false
+            self.view.layoutIfNeeded()
         }
     }
 

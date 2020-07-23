@@ -182,7 +182,8 @@ extension ScannerViewController {
             if let sureNumber = numberTracker.getStableString() {
                 numberTracker.reset(string: sureNumber)
                 stopRunning()
-                navigateToActionViewController(phoneNumber: sureNumber)
+                self.phoneNumber = sureNumber
+                self.showResultView()
             }
         }
         textObservations.removeAll()

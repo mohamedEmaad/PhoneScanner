@@ -25,8 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func setInitialView(_ windowScene: UIWindowScene) {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let scannerViewController = ScannerViewController()
-        let initialViewController = UINavigationController(rootViewController: scannerViewController)
+        let initialViewController = ScannerViewController()
         window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()
     }

@@ -10,10 +10,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScannerViewController" customModule="PhoneScanner" customModuleProvider="target">
             <connections>
                 <outlet property="actionsStackView" destination="EMz-ZI-cjr" id="9yV-7Y-dzh"/>
+                <outlet property="callButton" destination="Qm7-Ow-6do" id="zGc-JC-bSl"/>
+                <outlet property="closeButton" destination="MWh-p9-XOh" id="6kA-Jh-zO7"/>
                 <outlet property="cutoutView" destination="XKV-9e-7dL" id="MBw-Rq-Q2h"/>
                 <outlet property="preview" destination="dYI-hJ-0Xj" id="Gpq-FW-XcP"/>
                 <outlet property="resultEditText" destination="Bla-Eh-kg8" id="uDJ-by-c8b"/>
                 <outlet property="resultView" destination="LGn-Je-o0J" id="qFW-wE-PN0"/>
+                <outlet property="shareButton" destination="aN7-2d-jks" id="Wmu-lH-eYc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,59 +33,52 @@
                     <rect key="frame" x="0.0" y="10" width="414" height="886"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWh-p9-XOh">
+                    <rect key="frame" x="376.5" y="380" width="17.5" height="22"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="xmark" catalog="system"/>
+                    <connections>
+                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="FUc-hy-UgA"/>
+                    </connections>
+                </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGn-Je-o0J">
-                    <rect key="frame" x="20" y="431" width="374" height="44"/>
+                    <rect key="frame" x="20" y="418" width="374" height="70"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123123123" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bla-Eh-kg8">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="omM-gF-Hdz"/>
-                            </constraints>
+                            <rect key="frame" x="0.0" y="18" width="374" height="34"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                             <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
-                        <constraint firstItem="Bla-Eh-kg8" firstAttribute="top" secondItem="LGn-Je-o0J" secondAttribute="top" id="3hw-ph-ojc"/>
-                        <constraint firstAttribute="bottom" secondItem="Bla-Eh-kg8" secondAttribute="bottom" id="J4Z-I3-VZ2"/>
                         <constraint firstItem="Bla-Eh-kg8" firstAttribute="leading" secondItem="LGn-Je-o0J" secondAttribute="leading" id="Uro-bB-NgT"/>
+                        <constraint firstItem="Bla-Eh-kg8" firstAttribute="centerY" secondItem="LGn-Je-o0J" secondAttribute="centerY" id="Z9K-q6-gmv"/>
+                        <constraint firstAttribute="height" constant="70" id="hRE-zS-ofd"/>
                         <constraint firstAttribute="trailing" secondItem="Bla-Eh-kg8" secondAttribute="trailing" id="vhN-vU-cSW"/>
                     </constraints>
                 </view>
                 <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EMz-ZI-cjr">
-                    <rect key="frame" x="20" y="505" width="374" height="40"/>
+                    <rect key="frame" x="20" y="504" width="374" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HU-VG-ehk">
-                            <rect key="frame" x="0.0" y="0.0" width="124.5" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="gdv-Qq-T9B"/>
-                            </constraints>
-                            <state key="normal" title="Call" image="phone.circle.fill" catalog="system">
-                                <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="callAction:" destination="-1" eventType="touchUpInside" id="Vea-Bq-xxX"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVa-sM-D78">
-                            <rect key="frame" x="124.5" y="9" width="125" height="22"/>
-                            <state key="normal" title="Edit" image="square.and.pencil" catalog="system">
-                                <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="editAction:" destination="-1" eventType="touchUpInside" id="SCr-gp-sT0"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUj-lc-1xg">
-                            <rect key="frame" x="249.5" y="9" width="124.5" height="22"/>
-                            <state key="normal" title="Share" image="square.and.arrow.up" catalog="system">
-                                <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="shareAction:" destination="-1" eventType="touchUpInside" id="vEP-OB-6hl"/>
-                            </connections>
-                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qm7-Ow-6do" customClass="CustomButton" customModule="PhoneScanner" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="187" height="60"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="phone.fill" catalog="system"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="text" value="Call"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aN7-2d-jks" customClass="CustomButton" customModule="PhoneScanner" customModuleProvider="target">
+                            <rect key="frame" x="187" y="0.0" width="187" height="60"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="text" value="Share"/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="square.and.arrow.up.fill" catalog="system"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
                 </stackView>
             </subviews>
@@ -97,19 +93,21 @@
                 <constraint firstAttribute="trailing" secondItem="dYI-hJ-0Xj" secondAttribute="trailing" id="QEN-Iu-fsA"/>
                 <constraint firstItem="LGn-Je-o0J" firstAttribute="centerY" secondItem="XKV-9e-7dL" secondAttribute="centerY" id="VLu-0T-mGT"/>
                 <constraint firstItem="dYI-hJ-0Xj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Wd7-Ra-f7H"/>
+                <constraint firstItem="MWh-p9-XOh" firstAttribute="trailing" secondItem="LGn-Je-o0J" secondAttribute="trailing" id="YYX-qm-1Vy"/>
                 <constraint firstItem="LGn-Je-o0J" firstAttribute="leading" secondItem="XKV-9e-7dL" secondAttribute="leading" constant="20" id="e3L-UP-wvH"/>
-                <constraint firstItem="EMz-ZI-cjr" firstAttribute="top" secondItem="LGn-Je-o0J" secondAttribute="bottom" constant="30" id="i63-BL-PP7"/>
+                <constraint firstItem="EMz-ZI-cjr" firstAttribute="top" secondItem="LGn-Je-o0J" secondAttribute="bottom" constant="16" id="i63-BL-PP7"/>
                 <constraint firstItem="XKV-9e-7dL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="5" id="lgb-C9-Szb"/>
                 <constraint firstAttribute="trailing" secondItem="XKV-9e-7dL" secondAttribute="trailing" id="r5s-Jv-EEe"/>
                 <constraint firstAttribute="bottom" secondItem="dYI-hJ-0Xj" secondAttribute="bottom" id="s0J-Wv-fZh"/>
+                <constraint firstItem="LGn-Je-o0J" firstAttribute="top" secondItem="MWh-p9-XOh" secondAttribute="bottom" constant="16" id="vk0-N8-E86"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="153"/>
         </view>
     </objects>
     <resources>
-        <image name="phone.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
+        <image name="phone.fill" catalog="system" width="128" height="114"/>
+        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>
 </document>

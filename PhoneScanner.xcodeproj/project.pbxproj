@@ -23,6 +23,7 @@
 		F942605624C38D6400710CF8 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F942605424C38D6400710CF8 /* UIExtensions.swift */; };
 		F942605824C391AB00710CF8 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F942605724C391AB00710CF8 /* StringUtils.swift */; };
 		F942605924C391AB00710CF8 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F942605724C391AB00710CF8 /* StringUtils.swift */; };
+		F95C191824CB0C9900441DB4 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C191724CB0C9900441DB4 /* CustomButton.swift */; };
 		F9D8799B24C0EFC10004CCA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8799A24C0EFC10004CCA8 /* AppDelegate.swift */; };
 		F9D8799D24C0EFC10004CCA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8799C24C0EFC10004CCA8 /* SceneDelegate.swift */; };
 		F9D879A524C0EFC10004CCA8 /* PhoneScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9D879A324C0EFC10004CCA8 /* PhoneScanner.xcdatamodeld */; };
@@ -53,6 +54,7 @@
 		F942604D24C38D0500710CF8 /* PhoneScanner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhoneScanner-Bridging-Header.h"; sourceTree = "<group>"; };
 		F942605424C38D6400710CF8 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		F942605724C391AB00710CF8 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		F95C191724CB0C9900441DB4 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F9D8799724C0EFC10004CCA8 /* PhoneScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D8799A24C0EFC10004CCA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D8799C24C0EFC10004CCA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				F942604024C38B4900710CF8 /* PreviewView.swift */,
+				F95C191724CB0C9900441DB4 /* CustomButton.swift */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			files = (
 				F942604124C38B4900710CF8 /* PreviewView.swift in Sources */,
 				F942605524C38D6400710CF8 /* UIExtensions.swift in Sources */,
+				F95C191824CB0C9900441DB4 /* CustomButton.swift in Sources */,
 				F942604624C38BA900710CF8 /* ScannerViewController.swift in Sources */,
 				F942603D24C38B0F00710CF8 /* TextRecongnizerViewController.swift in Sources */,
 				F942605824C391AB00710CF8 /* StringUtils.swift in Sources */,

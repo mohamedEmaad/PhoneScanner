@@ -17,6 +17,9 @@ class TextRecongnizerViewController: UIViewController {
     @IBOutlet weak var resultView: UIView!
     @IBOutlet weak var resultEditText: UITextField!
     @IBOutlet weak var actionsStackView: UIStackView!
+    @IBOutlet weak var callButton: CustomButton!
+    @IBOutlet weak var shareButton: CustomButton!
+    @IBOutlet weak var closeButton: UIButton!
 
     var maskLayer = CAShapeLayer()
     // Device orientation. Updated whenever the orientation changes to a
@@ -78,6 +81,35 @@ class TextRecongnizerViewController: UIViewController {
                 self.calculateRegionOfInterest()
             }
         }
+        self.setupActions()
+        self.setupResultView()
+    }
+
+    private func setupActions() {
+        setupPreviewViewAction()
+        setupCallAction()
+        setupShareAction()
+    }
+
+    private func setupPreviewViewAction() {
+        self.view.isUserInteractionEnabled = true
+        let clickAction = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
+        self.view.addGestureRecognizer(clickAction)
+    }
+
+    private func setupCallAction() {
+        let clickAction = UITapGestureRecognizer(target: self, action: #selector(self.callAction(_:)))
+        self.callButton.addGestureRecognizer(clickAction)
+    }
+
+    private func setupShareAction() {
+        let clickAction = UITapGestureRecognizer(target: self, action: #selector(self.shareAction(_:)))
+        self.shareButton.addGestureRecognizer(clickAction)
+    }
+
+    private func setupResultView() {
+        self.resultView.clipsToBounds = true
+        self.resultView.layer.cornerRadius = 5
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -235,13 +267,6 @@ class TextRecongnizerViewController: UIViewController {
         }
         captureSession.startRunning()
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if !captureSession.isRunning {
-            captureSession.startRunning()
-        }
-    }
     
     func stopRunning() {
         captureSessionQueue.sync {
@@ -255,12 +280,13 @@ class TextRecongnizerViewController: UIViewController {
                 self.resultView.isHidden = false
                 self.actionsStackView.isHidden = false
                 self.resultEditText.text = self.phoneNumber!
+                self.closeButton.isHidden = false
             }
         }
     }
 
-    @IBAction func callAction(_ sender: Any) {
-        self.disablePhoneNumberTextField()
+    @objc private func callAction(_ sender: UIView) {
+        self.hideKeyboard()
          if let phoneCallURL = URL(string: "telprompt://\(phoneNumber!)") {
             let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
@@ -273,12 +299,8 @@ class TextRecongnizerViewController: UIViewController {
         }
     }
 
-    @IBAction func editAction(_ sender: Any) {
-        self.enablePhoneNumberTextField()
-    }
-
-    @IBAction func shareAction(_ sender: UIButton) {
-        self.disablePhoneNumberTextField()
+    @objc private func shareAction(_ sender: UIView) {
+        self.hideKeyboard()
         let size = self.view.frame.size
         UIGraphicsBeginImageContext(size)
         self.view.layer.render(in: UIGraphicsGetCurrentContext()!)
@@ -301,6 +323,22 @@ class TextRecongnizerViewController: UIViewController {
         self.present(activityVC, animated: true, completion: nil)
     }
 
+    @IBAction func closeAction(_ sender: Any) {
+        self.hideResultView()
+    }
+
+    private func hideResultView() {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.2) {
+                self.resultView.isHidden = true
+                self.actionsStackView.isHidden = true
+                self.resultEditText.text = self.phoneNumber!
+                self.closeButton.isHidden = true
+            }
+            self.captureSession.startRunning()
+        }
+    }
+
     private func enablePhoneNumberTextField() {
         UIView.animate(withDuration: 0.2) {
             self.resultEditText.isEnabled = true
@@ -310,11 +348,9 @@ class TextRecongnizerViewController: UIViewController {
         }
     }
 
-    @objc private func disablePhoneNumberTextField() {
+    @objc private func hideKeyboard() {
         UIView.animate(withDuration: 0.2) {
             self.resultEditText.resignFirstResponder()
-            self.resultEditText.borderStyle = .none
-            self.resultEditText.isEnabled = false
             self.view.layoutIfNeeded()
         }
     }

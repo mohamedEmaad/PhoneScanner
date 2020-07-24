@@ -75,4 +75,32 @@ class CustomButton: UIView {
         self.isUserInteractionEnabled = true
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let _ = touch.location(in: self)
+            // do something with your currentPoint
+            self.scaleDown()
+        }
+    }
+
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.scaleUp()
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.scaleUp()
+    }
+
+    private func scaleDown() {
+        UIView.animate(withDuration: 0.2) {
+            self.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        }
+    }
+
+    private func scaleUp() {
+        UIView.animate(withDuration: 0.2) {
+           self.transform = .identity
+        }
+    }
+
 }

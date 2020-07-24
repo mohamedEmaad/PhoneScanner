@@ -285,7 +285,7 @@ class TextRecongnizerViewController: UIViewController {
         }
     }
 
-    @objc private func callAction(_ sender: UIView) {
+    @objc private func callAction(_ sender: CustomButton) {
         self.hideKeyboard()
          if let phoneCallURL = URL(string: "telprompt://\(phoneNumber!)") {
             let application:UIApplication = UIApplication.shared
@@ -299,7 +299,7 @@ class TextRecongnizerViewController: UIViewController {
         }
     }
 
-    @objc private func shareAction(_ sender: UIView) {
+    @objc private func shareAction(_ sender: CustomButton) {
         self.hideKeyboard()
         let size = self.view.frame.size
         UIGraphicsBeginImageContext(size)

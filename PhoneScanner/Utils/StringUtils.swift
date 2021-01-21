@@ -86,6 +86,7 @@ extension String {
 ^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.0-9]*$
 """#
         let pattern2 = #"[^\d]"#
+        print("here is the extracted \(self)")
         guard let range = self.range(of: pattern, options: .regularExpression, range: nil, locale: nil) else {
             // No phone number found.
             print("phone number not found")
@@ -141,7 +142,6 @@ class StringTracker {
     var bestString = ""
 
     func logFrame(strings: [String]) {
-        print("here in the log string count \(strings.count)")
         for string in strings {
             if seenStrings[string] == nil {
                 seenStrings[string] = (lastSeen: Int64(0), count: Int64(-1))
@@ -178,7 +178,7 @@ class StringTracker {
 
     func getStableString() -> String? {
         // Require the recognizer to see the same string at least 10 times.
-        if bestCount >= 5 {
+        if bestCount >= 1 {
             return bestString
         } else {
             return nil

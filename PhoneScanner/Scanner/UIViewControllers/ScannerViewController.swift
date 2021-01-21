@@ -52,11 +52,12 @@ class ScannerViewController: TextRecongnizerViewController {
             return
         }
         textObservations = textResults
-        guard let rect = textResults.max(by: { ($0.boundingBox.width) < ($1.boundingBox.width) })?.boundingBox else {
+        guard let rect = textResults.last?.boundingBox else {
             return
         }
         redBoxes.append(rect)
         self.show(boxes: redBoxes)
+
     }
 
     // Draws groups of colored boxes.
@@ -142,6 +143,10 @@ extension ScannerViewController {
         let transform = ciImage.orientationTransform(for: CGImagePropertyOrientation(rawValue: 6)!)
         ciImage = ciImage.transformed(by: transform)
         let size = ciImage.extent.size
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+        print("here is the screen size \(screenWidth) and the height \(screenHeight)")
         for textObservation in textObservations {
             guard let rects = textObservation.characterBoxes else {
                 continue
@@ -162,11 +167,13 @@ extension ScannerViewController {
                 continue
             }
             let uiImage = UIImage(cgImage: cgImage)
+            print("here is the image \(size.width) and the height \(size.height)")
             tesseract?.image = uiImage
-            let blackListedString = "@!#$%^&*(),.?~{};:\"\'\\abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            let blackListedString = "@!#$%^&*(),?~{};:\"\'\\abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
             let whiteListedString = "+-.0123456789"
             tesseract?.charBlacklist = blackListedString
             tesseract?.charWhitelist = whiteListedString
+            tesseract?.pageSegmentationMode = .singleBlock
             tesseract?.recognize()
 
             guard var text = tesseract?.recognizedText else {
@@ -175,9 +182,9 @@ extension ScannerViewController {
             text = text.trimmingCharacters(in: CharacterSet.newlines)
             if let result = text.extractPhoneNumber() {
                 numbers.append(result.1)
+                                                                                                            let _ = "+20-115-5550-027"
             }
             count += 1
-            print("here is the loging \(count)")
             numberTracker.logFrame(strings: numbers)
             if let sureNumber = numberTracker.getStableString() {
                 numberTracker.reset(string: sureNumber)
